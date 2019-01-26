@@ -1,0 +1,71 @@
+@import "../../../../../font-sizes";
+@import "../../../../../responsive";
+:host {
+	display: flex;
+	flex-wrap: wrap;
+	.item {
+		position: relative;
+		display: flex;
+		flex: 1 0 50%;
+		margin-top: 19px;
+		padding-bottom: 7px;
+		&:nth-child(even) {
+			box-sizing: border-box;
+			padding-left: 20px;
+			&:after {
+				position: absolute;
+				display: block;
+				content: '';
+				border-bottom: 1px solid #1e3f54;
+				width: 200%;
+				bottom: 0;
+				left: -100%;
+			}
+		}
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
+		.image {
+			display: flex;
+			width: 38px;
+			height: 38px;
+			border: 2px solid white;
+			border-radius: 100%;
+			align-items: center;
+			justify-content: center;
+			margin-left: 20px;
+			img {
+				width: 65%;
+				height: 65%;
+			}
+		}
+		.value-and-text {
+			display: flex;
+			flex-direction: column;
+			margin-left: 10px;
+			.value {
+				font-size: $font-size-large;
+				font-weight: lighter;
+			}
+			.text {
+				margin-top: 4px;
+				font-size: $font-size-medium;
+				width: 0;
+			}
+		}
+		@include breakpoint(sm) {
+			flex: 1 1 100%;
+			&:nth-child(even) {
+				padding-left: 0;
+				&:after {
+					display: none;
+				}
+			}
+			&:last-child {
+				padding-bottom: 20px;
+			}
+		}
+	}
+}

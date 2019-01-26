@@ -1,0 +1,20 @@
+<div class="cards">
+	<app-text-with-image [text]="data.mainCard.title"
+						 [imageUrl]="data.mainCard.imageUrl">
+	</app-text-with-image>
+	<app-card *ngFor="let card of data.cards"
+			  class="{{card.type}}"
+			  [title]="card.title">
+		<div class="card-content" [ngSwitch]="card.type">
+			<ng-template [ngSwitchCase]="WebStatisticsCardType.Icons">
+				<app-icons-content [items]="card.items"></app-icons-content>
+			</ng-template>
+			<ng-template [ngSwitchCase]="WebStatisticsCardType.DonutChart">
+				<app-donut-content [items]="card.items"></app-donut-content>
+			</ng-template>
+			<ng-template [ngSwitchCase]="WebStatisticsCardType.Meters">
+				<app-meters-content [items]="card.items"></app-meters-content>
+			</ng-template>
+		</div>
+	</app-card>
+</div>

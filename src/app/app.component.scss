@@ -1,0 +1,66 @@
+@import "../colors";
+@import "../responsive";
+:host {
+	display: flex;
+	flex: 1;
+	height: 100%;
+	background-color: $color-primary;
+	.top-bar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		background-color: #1e3f54;
+		height: 63px;
+	}
+	.left-bar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 61px;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.4);
+		line-height: 76px;
+		text-align: center;
+		.logo {
+			width: 24px;
+			height: 24px;
+		}
+	}
+	.right-bar {
+		position: absolute;
+		top: 63px;
+		right: 0;
+		width: 213px;
+		bottom: 0;
+		background-color: #1a2d38;
+	}
+	.router-wrapper {
+		position: absolute;
+		top: 63px;
+		left: 61px;
+		right: 213px;
+		bottom: 0;
+	}
+	@include breakpoint(lg) {
+		.right-bar {
+			width: 0;
+		}
+		.router-wrapper {
+			right: 0;
+		}
+	}
+	@include breakpoint(sm) {
+		.left-bar {
+			height: 63px;
+			bottom: initial;
+		}
+		.right-bar {
+			width: 0;
+		}
+		.router-wrapper {
+			left: 0;
+			right: 0;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.items {
+	padding: 19px 19px;
+	padding-bottom: 0;
+	.item {
+		margin-bottom: 28px;
+		.text {
+			font-size: 11px;
+			letter-spacing: 0.6px;
+		}
+		.meter-and-value {
+			display: flex;
+			.meter {
+				flex: 0.9;
+				margin-top: 6px;
+			}
+			.value {
+				text-align: right;
+				flex: 0.1;
+				font-size: 11px;
+			}
+		}
+	}
+}

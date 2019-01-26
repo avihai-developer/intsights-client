@@ -1,0 +1,9 @@
+<app-page-title [title]="pageTitle"></app-page-title>
+<div class="risk-meter-container" *ngIf="riskMeter">
+	<app-meter-with-label [label]="riskMeter.title"
+						  [percentages]="riskMeter.percentages">
+	</app-meter-with-label>
+</div>
+<app-web-statistics *ngFor="let webStatistics of webStatistics"
+					[data]="webStatistics">
+</app-web-statistics>

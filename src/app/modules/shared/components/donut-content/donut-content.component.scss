@@ -1,0 +1,24 @@
+@import "../../../../../font-sizes";
+:host {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	.chart {
+		text-align: center;
+		margin-top: 20px;
+	}
+	.data {
+		display: flex;
+		padding: 0 48px;
+		justify-content: space-between;
+		margin-top: 22px;
+		.data-item {
+			.text {
+				font-size: $font-size-medium;
+			}
+			.value {
+				font-size: $font-size-large;
+			}
+		}
+	}
+}

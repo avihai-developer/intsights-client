@@ -1,0 +1,44 @@
+@import "../../../../../responsive";
+:host {
+	margin-bottom: -8px;
+	.cards {
+		display: flex;
+		.ICONS {
+			flex: .4;
+		}
+		.DONUT_CHART {
+			flex: .35;
+		}
+		.METERS {
+			flex: .25;
+		}
+	}
+	@include breakpoint(md) {
+		.cards {
+			flex-wrap: wrap;
+			.ICONS {
+				flex: 1 1 70%;
+			}
+			.DONUT_CHART {
+				flex: 1 1 25%;
+			}
+			.METERS {
+				flex: 1 1 25%;
+			}
+		}
+	}
+	@include breakpoint(sm) {
+		.cards {
+			flex-direction: column;
+			.ICONS {
+				flex: 1;
+			}
+			.DONUT_CHART {
+				flex: 1;
+			}
+			.METERS {
+				flex: 1;
+			}
+		}
+	}
+}

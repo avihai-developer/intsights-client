@@ -1,0 +1,9 @@
+<div class="chart">
+	<app-donut-chart [data]="items"></app-donut-chart>
+</div>
+<div class="data">
+	<div class="data-item" *ngFor="let item of items">
+		<div class="text">{{item.text}}</div>
+		<div class="value">{{item.value | number}}</div>
+	</div>
+</div>

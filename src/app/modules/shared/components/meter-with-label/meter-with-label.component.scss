@@ -1,0 +1,21 @@
+@import "../../../../../font-sizes";
+:host {
+	margin-bottom: 20px;
+	.label {
+		font-size: $font-size-medium;
+		letter-spacing: 1.1px;
+	}
+	.meter-and-percentages {
+		display: flex;
+		padding: 13px;
+		background-color: #1a4b6d;
+		margin-top: 12px;
+		padding-bottom: 10px;
+		.percentages {
+			font-size: $font-size-medium;
+			padding-right: 15px;
+			padding-left: 36px;
+			margin-top: -4px;
+		}
+	}
+}

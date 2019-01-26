@@ -1,0 +1,8 @@
+@import "../../../../../font-sizes";
+:host {
+	text-align: center;
+	.title {
+		font-weight: lighter;
+		font-size: $font-size-large
+	}
+}

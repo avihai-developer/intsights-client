@@ -1,0 +1,13 @@
+<svg width="150" height="150" viewBox="0 0 150 150">
+	<circle *ngFor="let item of donutChart"
+			cx="75"
+			cy="75"
+			[attr.r]="radius"
+			fill="transparent"
+			[attr.stroke]="item.color"
+			stroke-width="8"
+			role="presentation"
+			[attr.stroke-dasharray]="item.strokeDasharray"
+			[attr.stroke-dashoffset]="item.strokeDashoffset">
+	</circle>
+</svg>

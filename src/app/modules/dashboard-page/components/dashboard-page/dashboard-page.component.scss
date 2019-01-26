@@ -1,0 +1,32 @@
+@import "../../../../../responsive";
+:host {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	height: 100%;
+	padding-top: 18px;
+	padding-left: 17px;
+	padding-right: 32px;
+	box-sizing: border-box;
+	letter-spacing: 2px;
+	overflow: auto;
+	.risk-meter-container {
+		display: flex;
+		width: 100%;
+		justify-content: flex-end;
+		margin-top: 21px;
+		min-height: 60px;
+		margin-bottom: 20px;
+		app-meter-with-label {
+			flex: 0 0 53%;
+		}
+	}
+	@include breakpoint(sm) {
+		padding-right: 17px;
+		.risk-meter-container {
+			app-meter-with-label {
+				flex: 1 1 100%;
+			}
+		}
+	}
+}

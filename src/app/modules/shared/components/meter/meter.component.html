@@ -1,0 +1,17 @@
+<svg width="100%">
+  <linearGradient id="colorful">
+    <stop offset="0%" stop-color="#03afd8"/>
+    <stop offset="50%" stop-color="#f7a800"/>
+    <stop offset="100%" stop-color="#e52e3d"/>
+  </linearGradient>
+  <rect class="meter"
+        width="100%"
+        height="6"
+        [attr.fill]="colorful ? 'url(#colorful)' : '#80b3d7'">
+  </rect>
+  <rect [attr.x]="percentages + '%'"
+        width="100%"
+        height="6"
+        fill="#1a394c">
+  </rect>
+</svg>
