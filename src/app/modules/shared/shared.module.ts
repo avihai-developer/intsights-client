@@ -11,6 +11,7 @@ import { TextWithImageComponent } from './components/text-with-image/text-with-i
 import { MeterComponent } from './components/meter/meter.component';
 import { MeterWithLabelComponent } from './components/meter-with-label/meter-with-label.component';
 import {HttpClientModule} from '@angular/common/http';
+import { OrderByPipe } from './pipes/order-by/order-by.pipe';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import {HttpClientModule} from '@angular/common/http';
         MetersContentComponent,
         TextWithImageComponent,
         MeterComponent,
-        MeterWithLabelComponent
+        MeterWithLabelComponent,
+        OrderByPipe
     ],
     imports: [
         CommonModule,
@@ -34,7 +36,8 @@ import {HttpClientModule} from '@angular/common/http';
         WebStatisticsComponent,
         CardComponent,
         DonutChartComponent,
-        MeterWithLabelComponent
+        MeterWithLabelComponent,
+        OrderByPipe
     ]
 })
 export class SharedModule {

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {WebStatistics} from './interfaces/web-statistics';
 import {WebStatisticsCardType} from './enums/web-statistics-card-type';
+import {WebStatistics} from './interfaces/web-statistics.interface';
 
 @Component({
     selector: 'app-web-statistics',

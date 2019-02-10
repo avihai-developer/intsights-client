@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {DonutContent} from '../donut-content/interfaces/donut-content';
 import {DonutChartItem} from './interfaces/donut-chart-item';
+import DonutContentDictionary from '../donut-content/interfaces/donut-content-dictionary.interface';
 
 @Component({
     selector: 'app-donut-chart',
@@ -10,7 +10,7 @@ import {DonutChartItem} from './interfaces/donut-chart-item';
 export class DonutChartComponent implements OnInit {
 
     radius: number;
-    @Input() data: DonutContent[];
+    @Input() data: DonutContentDictionary;
     donutChart: DonutChartItem[];
 
     constructor() {
@@ -24,20 +24,24 @@ export class DonutChartComponent implements OnInit {
     setDonutChartData(): void {
         this.donutChart = [];
         let total = 0;
-        for (let i = 0; i < this.data.length; i++) {
-            total = total + this.data[i].value;
+        for (const key in this.data) {
+            if (this.data.hasOwnProperty(key)) {
+                total = total + this.data[key].value;
+            }
         }
         const circleScope = 2 * Math.PI * this.radius;
         let strokeDashoffset = 0;
-        for (let i = 0; i < this.data.length; i++) {
-            const percentages = this.data[i].value * 100 / total;
-            this.donutChart.push({
-                color: this.data[i].color,
-                percentages: percentages ,
-                strokeDasharray: circleScope * (0.01 * percentages) + ' ' + circleScope,
-                strokeDashoffset: strokeDashoffset
-            });
-            strokeDashoffset = strokeDashoffset - (circleScope * (0.01 * percentages));
+        for (const key in this.data) {
+            if (this.data.hasOwnProperty(key)) {
+                const percentages = this.data[key].value * 100 / total;
+                this.donutChart.push({
+                    color: this.data[key].color,
+                    percentages: percentages ,
+                    strokeDasharray: circleScope * (0.01 * percentages) + ' ' + circleScope,
+                    strokeDashoffset: strokeDashoffset
+                });
+                strokeDashoffset = strokeDashoffset - (circleScope * (0.01 * percentages));
+            }
         }
     }
 

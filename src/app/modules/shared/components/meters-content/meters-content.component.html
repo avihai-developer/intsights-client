@@ -1,11 +1,11 @@
 <div class="items">
-	<div class="item" *ngFor="let item of items">
-		<div class="text">{{item.text}}</div>
+	<div class="item" *ngFor="let item of items | keyvalue | orderBy:'order'">
+		<div class="text">{{item.value.text}}</div>
 		<div class="meter-and-value">
 			<div class="meter">
-				<app-meter [percentages]="item.value"></app-meter>
+				<app-meter [percentages]="item.value.value"></app-meter>
 			</div>
-			<div class="value">{{item.value}}</div>
+			<div class="value">{{item.value.value}}</div>
 		</div>
 	</div>
 </div>

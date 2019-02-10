@@ -1,9 +1,9 @@
-<div class="item" *ngFor="let item of items">
+<div class="item" *ngFor="let item of items | keyvalue | orderBy:'order'">
 	<div class="image">
-		<img [src]="item.imageUrl" [alt]="item.text">
+		<img [src]="item.value.imageUrl" [alt]="item.value.text">
 	</div>
 	<div class="value-and-text">
-		<div class="value">{{item.value | number}}</div>
-		<div class="text">{{item.text}}</div>
+		<div class="value">{{item.value.value | number}}</div>
+		<div class="text">{{item.value.text}}</div>
 	</div>
 </div>

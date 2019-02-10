@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MetersContent} from './interfaces/meters-content';
+import MetersContentDictionary from './interfaces/meters-content-dictionary.interface';
 
 @Component({
     selector: 'app-meters-content',
@@ -8,7 +8,7 @@ import {MetersContent} from './interfaces/meters-content';
 })
 export class MetersContentComponent implements OnInit {
 
-    @Input() items: MetersContent[];
+    @Input() items: MetersContentDictionary;
 
     constructor() {
     }
