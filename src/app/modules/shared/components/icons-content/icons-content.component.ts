@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IconsContent} from './interfaces/icons-content';
+import IconsContentDictionary from './interfaces/icons-content-dictionary.interface';
 
 @Component({
     selector: 'app-icons-content',
@@ -8,7 +8,7 @@ import {IconsContent} from './interfaces/icons-content';
 })
 export class IconsContentComponent implements OnInit {
 
-    @Input() items: IconsContent[];
+    @Input() items: IconsContentDictionary;
 
     constructor() {
     }

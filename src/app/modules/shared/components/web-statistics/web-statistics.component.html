@@ -2,18 +2,18 @@
 	<app-text-with-image [text]="data.mainCard.title"
 						 [imageUrl]="data.mainCard.imageUrl">
 	</app-text-with-image>
-	<app-card *ngFor="let card of data.cards"
-			  class="{{card.type}}"
-			  [title]="card.title">
-		<div class="card-content" [ngSwitch]="card.type">
+	<app-card *ngFor="let card of data.cards | keyvalue | orderBy:'order'"
+			  class="{{card.value.type}}"
+			  [title]="card.value.title">
+		<div class="card-content" [ngSwitch]="card.value.type">
 			<ng-template [ngSwitchCase]="WebStatisticsCardType.Icons">
-				<app-icons-content [items]="card.items"></app-icons-content>
+				<app-icons-content [items]="card.value.items"></app-icons-content>
 			</ng-template>
 			<ng-template [ngSwitchCase]="WebStatisticsCardType.DonutChart">
-				<app-donut-content [items]="card.items"></app-donut-content>
+				<app-donut-content [items]="card.value.items"></app-donut-content>
 			</ng-template>
 			<ng-template [ngSwitchCase]="WebStatisticsCardType.Meters">
-				<app-meters-content [items]="card.items"></app-meters-content>
+				<app-meters-content [items]="card.value.items"></app-meters-content>
 			</ng-template>
 		</div>
 	</app-card>

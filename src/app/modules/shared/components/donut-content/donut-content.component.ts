@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {DonutContent} from './interfaces/donut-content';
+import DonutContentDictionary from './interfaces/donut-content-dictionary.interface';
 
 @Component({
     selector: 'app-donut-content',
@@ -8,7 +8,7 @@ import {DonutContent} from './interfaces/donut-content';
 })
 export class DonutContentComponent implements OnInit {
 
-    @Input() items: DonutContent[];
+    @Input() items: DonutContentDictionary;
 
     constructor() {
     }

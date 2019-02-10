@@ -4,6 +4,6 @@
 						  [percentages]="riskMeter.percentages">
 	</app-meter-with-label>
 </div>
-<app-web-statistics *ngFor="let webStatistics of webStatistics"
-					[data]="webStatistics">
+<app-web-statistics *ngFor="let webStatistics of webStatistics | keyvalue | orderBy:'order'"
+					[data]="webStatistics.value">
 </app-web-statistics>
